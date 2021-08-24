@@ -1,0 +1,153 @@
+{% extends 'traveler/base.html' %}
+{% load static %}
+{% block head %}
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
+  </style>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
+  </style>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
+  </style>
+{% endblock %}
+{% block title %}
+Place|{{ place.name }}
+{% endblock %}
+{% block body %}
+<!-- <body style="background-color: black;"> -->
+  <style>
+    body{
+      background-color: black;
+    }
+  </style>
+  <center>
+    <a href="{% url 'index' %}" class="nav-main-link">Home</a>
+  </center>
+
+
+<!-- Photo Grid -->
+<center>
+<div class="collage">
+<div class="row"> 
+  <div class="col-lg-6">
+    <img class="picture" src="{{ place.image_main.url }}" style="width:90%">
+  </div>
+  <div class="col-lg-6">
+    <img class="picture" src="{{ place.image_sec.url }}" style="width:90%">
+    </div>
+    
+
+</div>
+</center>
+
+<center>
+  <h1 class="heading">{{ place.name }}</h1>
+</center>
+<center>
+  <p class="para-1"> {{ place.description }}</p>
+  <br>
+  <p class="para-1"> Price: USD {{ place.price }} </p> 
+</center>
+
+
+
+
+
+
+<section id="carousel_section">
+  
+
+
+
+
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+
+    <div class="carousel-item active">
+      
+      <div class="place-1" style="background-image: url('{{ place.image_main.url }}');">
+<center>
+        <h2 class=" caro-text" style="padding-top: 75px;">This is an incredible place. Everyone should visit this place. <br> -Manan Bhatia</h2>
+    
+        <h2 class="caro-text">
+      </center>
+      </div>
+    </div>
+
+
+
+
+    <div class="carousel-item ">
+      
+      <div class="place-1" style="background-image: url('{{ place.image_sec.url }}');">
+      <center>
+        <h2 class=" caro-text" style="padding-top: 75px;">If your a space lover then you should visit here. <br> -Himanshu </h2>
+      </center>
+      </div>
+    </div>
+
+
+
+
+
+
+
+    
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+
+
+
+<footer>
+    <hr style="color:white;">
+    <div class="row">
+      <div class="col-lg-4">
+           <div class="card" style="width: 10rem; border-color: transparent; background-color: black;">
+                 <div class="card-title">
+                          <p style="color: white;"> About </p>
+                 </div>
+           </div>
+      </div>
+   <div class="col-lg-4">
+       <div class="card" style="width: 10rem; border-color: transparent; background-color: black;">
+                 <div class="card-title">
+                      <p style="color:white;"> Community </p> <br>
+                      <a href=""></a>
+                 </div>
+       </div>
+  </div>
+
+     <div class="col-lg-4">
+           <div class="card" style="width: 10rem; border-color: transparent; background-color: black;">
+                 <div class="card-title">
+                          <p style="color:white;"> Usful Links </p>
+                 </div>
+           </div>
+      </div>
+   </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+</section>
+
+
+{% endblock %}
