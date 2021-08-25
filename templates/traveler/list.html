@@ -1,0 +1,44 @@
+{% extends 'traveler/base.html' %}
+{%  load static %}
+{% block title %}
+Orbit Technologies
+{% endblock %}
+
+{% block body %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+    
+
+      <a href="{% url 'index' %}" class="nav-main-link navbar-brand">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <form class="d-flex" method="GET" action="{% url 'search' %}">
+        <input id ="search" class="form-control me-2" type="text" name="place" >
+        <button type="submit" class="btn submit-btn" > Search</button>
+      </form>
+      {% if error %}
+      <form action="{% url 'index' %}" method="GET">
+      <button type="submit" class="btn btn-warning">{{ error }}</button> <button class="btn btn-secondary" type="submit" > Try Again</button>
+      </form>
+      {% endif %}
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      {% for place in places %}
+        <div class="col-sm-3">
+          <div class="card">
+            <img src="{{ place.image_main.url }}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{ place.name }}</h5>
+              <p class="card-text">{{ place.description|slice:":100" }}....</p>
+             <a href="{% url 'detail' place.pk %}"> <p class="card-text"><small class="text-muted">Book Your Tickets Now!</small></p>
+            </div></a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+</div>
+{% endblock %} 

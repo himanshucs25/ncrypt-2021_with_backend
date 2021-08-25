@@ -1,6 +1,6 @@
 from django.shortcuts import render,get_object_or_404
 from traveler import models
-from django.http import HttpResponse, HttpResponseRedirect,Http404
+from django.http import HttpResponse, HttpResponseRedirect,Http404, response
 # Create your views here.
 def index(request):
     places=models.Place.objects.all()
@@ -10,6 +10,14 @@ def index(request):
         'top4_places':places[0:4]
     }
     response=render(request,'traveler/index.html',context)
+    return response
+
+def listPlaces(request):
+    places=models.Place.objects.all()
+    context={
+        'places':places
+    }
+    response=render(request,'traveler/list.html',context)
     return response
 
 def search(request):
