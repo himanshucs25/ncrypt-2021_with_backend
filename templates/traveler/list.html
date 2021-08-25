@@ -28,17 +28,20 @@ Orbit Technologies
   <div class="container">
     <div class="row">
       {% for place in places %}
-        <div class="col-sm-3">
+        <div class="col-sm-3 desing-23">
           <div class="card">
             <img src="{{ place.image_main.url }}" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">{{ place.name }}</h5>
               <p class="card-text">{{ place.description|slice:":100" }}....</p>
-             <a href="{% url 'detail' place.pk %}"> <p class="card-text"><small class="text-muted">Book Your Tickets Now!</small></p>
+             <a href="{% url 'detail' place.pk %}"> <p class="card-text"><small class="text-muted">
+               <button style="border-radius: 100px;" class="btn-info"> Book Your Tickets Now!</button></small></p>
             </div></a>
           </div>
         </div>
       {% endfor %}
     </div>
 </div>
+
+{% include 'components/footer.html' %}
 {% endblock %} 

@@ -226,6 +226,16 @@ color:green;
 	text-shadow: 2px 2px cyan;
 }
 
+.desing-23{
+	border-radius: 30px;
+	border-width: 0px;
+}
+.desing-23:hover{
+
+
+	box-shadow: 5px 5px 5px 5px grey;
+	
+}
 
 .boxeee{
 	width: 800px;

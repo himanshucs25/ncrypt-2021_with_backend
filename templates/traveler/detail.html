@@ -18,11 +18,11 @@ Place|{{ place.name }}
 <!-- <body style="background-color: black;"> -->
   <style>
     body{
-      background-color: black;
+      background-color: white;
     }
   </style>
   <center>
-    <a href="{% url 'index' %}" class="nav-main-link">Home</a>
+    <a href="{% url 'index' %}" style="color: black;"class="nav-main-link">Home</a>
   </center>
 
 
@@ -42,12 +42,12 @@ Place|{{ place.name }}
 </center>
 
 <center>
-  <h1 class="heading">{{ place.name }}</h1>
+  <h1 style="color:black;"class="heading">{{ place.name }}</h1>
 </center>
 <center>
-  <p class="para-1"> {{ place.description }}</p>
+  <p class="para-1" style="color: black;"> {{ place.description }}</p>
   <br>
-  <p class="para-1"> Price: USD {{ place.price }} </p> 
+  <p class="para-1" style="color: black;"> Price: USD {{ place.price }} </p> 
 </center>
 
 
@@ -103,51 +103,7 @@ Place|{{ place.name }}
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-
-
-
-
-
-<footer>
-    <hr style="color:white;">
-    <div class="row">
-      <div class="col-lg-4">
-           <div class="card" style="width: 10rem; border-color: transparent; background-color: black;">
-                 <div class="card-title">
-                          <p style="color: white;"> About </p>
-                 </div>
-           </div>
-      </div>
-   <div class="col-lg-4">
-       <div class="card" style="width: 10rem; border-color: transparent; background-color: black;">
-                 <div class="card-title">
-                      <p style="color:white;"> Community </p> <br>
-                      <a href=""></a>
-                 </div>
-       </div>
-  </div>
-
-     <div class="col-lg-4">
-           <div class="card" style="width: 10rem; border-color: transparent; background-color: black;">
-                 <div class="card-title">
-                          <p style="color:white;"> Usful Links </p>
-                 </div>
-           </div>
-      </div>
-   </div>
-</footer>
-
-
-
-
-
-
-
-
-
-
-
 </section>
 
-
+{% include 'components/footer.html'%}
 {% endblock %}
